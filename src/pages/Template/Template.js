@@ -21,9 +21,9 @@ function Template({
 }) {
   const [data, setData] = useState([]);
   const [pageNo, setPageNo] = useState(1);
-  const totalPages = Math.round(templates.length / 15);
+  const totalPages =  Number(templates.length)  ? Math.round(templates?.length / 15 ) : null  
   const paginator = useCallback(() => {
-    let tempview = templates.slice((pageNo - 1) * 15, pageNo * 15);
+    let tempview = templates?.length > 0 ?  templates?.slice((pageNo - 1) * 15, pageNo * 15  ) || templates.slice(pageNo) : templates 
     setData(tempview);
     setPageNo((pageNo) => pageNo);
   }, [pageNo, templates]);
@@ -32,7 +32,7 @@ function Template({
     paginator();
   }, [templates, paginator, pageNo]);
 
-  const resultSummary =     `${templates.length} Templates ${categoryValue!=="All" ? "Found" :""}` 
+  const resultSummary =     `${templates.length || 0} Templates ${categoryValue!=="All" || searchTerm !== "" ? "Found" :""}` 
 
   return (
     <>
@@ -102,7 +102,7 @@ function Template({
 
       <div className={classes.paginateContainer}>
           {
-              data.length > 0 && (
+              data?.length > 0 && (
               <>
               <button
               className={classes.paginateBtn}
@@ -116,7 +116,7 @@ function Template({
         <div className={classes.noTotalContainer}>
           <span className={[classes.presentPageNo,classes.pagItem].join(" ")}>{pageNo}</span>
           <span className={classes.pagItem}>of</span>
-          <span className={classes.pagItem}>{totalPages}</span>
+          <span className={classes.pagItem}>{ totalPages &&  totalPages}</span>
         </div>
         <button
           className={classes.paginateBtn}

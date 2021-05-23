@@ -61,12 +61,10 @@ function App() {
   };
 
   const filterByCategory = () => {
-    let tempData = resolvedData;
+    let tempData = templates;
     if(  categoryValue !== "All" ){
-      const filteredTemplate = tempData.slice(0).filter((template) => {
-        return template.category.includes(
-          categoryValue
-          );
+      const filteredTemplate = tempData.filter((template) => {
+        return template.category.forEach(catgyItem => catgyItem.include(categoryValue))
         });
         setResolvedData(filteredTemplate);
       }
@@ -76,7 +74,7 @@ function App() {
   };
 
   const filterByDate = useCallback(() => {
-    let tempData = resolvedData;
+    let tempData = templates;
     if(dateValue !== "Default") {
 
       const filteredTemplate = tempData.slice(0).sort((a, b) => {
@@ -103,12 +101,23 @@ function App() {
 
 
   const handleSearch =()=>{
-    let tempData = resolvedData;
+    let tempData = templates;
+    let filteredArr = []
     if(searchTerm!== "" ){
-
-      let filteredArr = tempData.filter(template=>template.category.includes(searchTerm)||template.description.includes(searchTerm)||template.name.includes(searchTerm))
       
-      setResolvedData(filteredArr)
+      if(Array.isArray(tempData)) {
+        
+       filteredArr = tempData.filter(template=>template.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      }
+        
+     if( filteredArr.length === 0   ) {
+       setResolvedData({resolvedState:'empty'}) 
+     }
+     else {
+
+       filteredArr.resolveState = null
+       return setResolvedData(filteredArr)
+      }
     }
     else{
       setResolvedData(templates)
@@ -117,7 +126,7 @@ function App() {
 
 
   const  handleTemplateReordering = () => {
-    let tempData = resolvedData;
+    let tempData = templates;
     if(orderValue !== "" && orderValue !== "Default" ) {
 
       let sortedData = tempData.slice(0).sort((a, b) => {
