@@ -62,21 +62,24 @@ function App() {
 
   const filterByCategory = () => {
     let tempData = templates;
-    if(  categoryValue !== "All" ){
+    if(  categoryValue !== "All" && Array.isArray(tempData) ){
       const filteredTemplate = tempData.filter((template) => {
-        return template.category.forEach(catgyItem => catgyItem.include(categoryValue))
+        return template.category.some(catgyItem => catgyItem = categoryValue )
         });
         setResolvedData(filteredTemplate);
       }
-      else{
+      else if ( categoryValue === "All"){
         setResolvedData(templates)
+      }
+      else {
+        setResolvedData(tempData)
       }
   };
 
   const filterByDate = useCallback(() => {
-    let tempData = templates;
-    if(dateValue !== "Default") {
-
+    let tempData = resolvedData;
+    if(dateValue !== "Default" && Array.isArray(tempData)) {
+        
       const filteredTemplate = tempData.slice(0).sort((a, b) => {
         let dateA = new Date(a.created);
         let dateB = new Date(b.created);
@@ -94,8 +97,11 @@ function App() {
     });
     setResolvedData(filteredTemplate);
   }
-  else{
+  else if(dateValue === "Default"){
     setResolvedData(templates)
+  }
+  else {
+    setResolvedData(tempData)
   }
   },[dateValue])
 
@@ -126,8 +132,8 @@ function App() {
 
 
   const  handleTemplateReordering = () => {
-    let tempData = templates;
-    if(orderValue !== "" && orderValue !== "Default" ) {
+    let tempData = resolvedData;
+    if(orderValue !== "Default" && Array.isArray(tempData) ) {
 
       let sortedData = tempData.slice(0).sort((a, b) => {
         if (orderValue === "Ascending") {
@@ -144,8 +150,12 @@ function App() {
       setResolvedData(sortedData);
     }
 
-    else{
+    else if (orderValue === "Default") {
+
       setResolvedData(templates)
+    } 
+    else{
+      setResolvedData(tempData)
     }
     };
 
