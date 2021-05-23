@@ -3,10 +3,11 @@ import CardList from "../../components/CardList/CardList";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import classes from "./Template.module.css";
 import { defaultOptions, categoryOptions } from "./../../config/Config";
-import searchIcon from '../../assets/icons/search.svg'
-import exclamationIcon from '../../assets/icons/exclamation.svg'
-import rightArr from '../../assets/icons/rightArr.svg'
+import searchIcon from "../../assets/icons/search.svg";
+import exclamationIcon from "../../assets/icons/exclamation.svg";
+import rightArr from "../../assets/icons/rightArr.svg";
 import FeedBox from "../../components/FeedBox/FeedBox";
+import { advertMsg } from "./../../config/Config";
 
 function Template({
   templates,
@@ -17,13 +18,19 @@ function Template({
   dateValue,
   orderValue,
   handleSearchTerm,
-  searchTerm
+  searchTerm,
 }) {
   const [data, setData] = useState([]);
   const [pageNo, setPageNo] = useState(1);
-  const totalPages =  Number(templates.length)  ? Math.round(templates?.length / 15 ) : null  
+  const totalPages = Number(templates.length)
+    ? Math.round(templates?.length / 15)
+    : null;
   const paginator = useCallback(() => {
-    let tempview = templates?.length > 0 ?  templates?.slice((pageNo - 1) * 15, pageNo * 15  ) || templates.slice(pageNo) : templates 
+    let tempview =
+      templates?.length > 0
+        ? templates?.slice((pageNo - 1) * 15, pageNo * 15) ||
+          templates.slice(pageNo)
+        : templates;
     setData(tempview);
     setPageNo((pageNo) => pageNo);
   }, [pageNo, templates]);
@@ -32,26 +39,35 @@ function Template({
     paginator();
   }, [templates, paginator, pageNo]);
 
-  const resultSummary =     `${templates.length || 0} Templates ${categoryValue!=="All" || searchTerm !== "" ? "Found" :""}` 
+  const resultSummary = `${templates.length || 0} Templates ${
+    categoryValue !== "All" || searchTerm !== "" ? "Found" : ""
+  }`;
 
   return (
     <>
       <div className={classes.templateTopSec}>
         <div className={classes.searchContainer}>
-          <input className={classes.searchBox} value={searchTerm} onChange={handleSearchTerm} placeholder="Search Templates" />
+          <input
+            className={classes.searchBox}
+            value={searchTerm}
+            onChange={handleSearchTerm}
+            placeholder='Search Templates'
+          />
           <span className={classes.searchIcon}>
-              <img src={searchIcon} alt="" width={25} />
+            <img src={searchIcon} alt='' width={25} />
           </span>
         </div>
 
         <div className={classes.dropdownsWrapper}>
-          <span style={{
-               fontSize: '14px',
-               lineHeight: '16px',
-               color: '#989898',
-               marginRight:'20px',
-               
-          }}>Sort By:</span>
+          <span
+            style={{
+              fontSize: "14px",
+              lineHeight: "16px",
+              color: "#989898",
+              marginRight: "20px",
+            }}>
+            Sort By:
+          </span>
           <div className={classes.dropdown}>
             <Dropdown
               label='Category'
@@ -82,53 +98,58 @@ function Template({
         </div>
       </div>
       <div className={classes.feedBoxWrapper}>
-          <FeedBox>
-              <>
-              <img src={exclamationIcon} alt="" style={{padding:'0 10px'}} />
-              <p className={classes.advertContainer}>
-              Tada! Get started with a free template. Can’t find what you are looking for? Search from the 1000+ available templates
-              </p>
-              </>
-          </FeedBox>
-
+        <FeedBox>
+          <>
+            <img src={exclamationIcon} alt='' style={{ padding: "0 10px" }} />
+            <p className={classes.advertContainer}>{advertMsg}</p>
+          </>
+        </FeedBox>
       </div>
       <div className={classes.templateHeader}>
-        <span className={classes.templateHeaderItem}> {categoryValue} Templates</span>
-        <span  className={classes.templateHeaderSummary}>{resultSummary}</span>
+        <span className={classes.templateHeaderItem}>
+          {" "}
+          {categoryValue} Templates
+        </span>
+        <span className={classes.templateHeaderSummary}>{resultSummary}</span>
       </div>
       <div>
         <CardList data={data} />
       </div>
 
       <div className={classes.paginateContainer}>
-          {
-              data?.length > 0 && (
-              <>
-              <button
+        {data?.length > 0 && (
+          <>
+            <button
               className={classes.paginateBtn}
               disabled={pageNo === 1}
               onClick={() => {
-            setPageNo((page) => page - 1);
-          }}>
-          <span>Previous</span>
-        </button>
+                setPageNo((page) => page - 1);
+              }}>
+              <span>Previous</span>
+            </button>
 
-        <div className={classes.noTotalContainer}>
-          <span className={[classes.presentPageNo,classes.pagItem].join(" ")}>{pageNo}</span>
-          <span className={classes.pagItem}>of</span>
-          <span className={classes.pagItem}>{ totalPages &&  totalPages}</span>
-        </div>
-        <button
-          className={classes.paginateBtn}
-          disabled={templates.length < pageNo * 15}
-          onClick={() => {
-            setPageNo((page) => page + 1);
-          }}>
-          <span>Next  <img src={rightArr} alt="" style={{marginLeft:"4px"}} /></span>
-        </button> 
-        </>
-        )
-    }
+            <div className={classes.noTotalContainer}>
+              <span
+                className={[classes.presentPageNo, classes.pagItem].join(" ")}>
+                {pageNo}
+              </span>
+              <span className={classes.pagItem}>of</span>
+              <span className={classes.pagItem}>
+                {totalPages && totalPages}
+              </span>
+            </div>
+            <button
+              className={classes.paginateBtn}
+              disabled={templates.length < pageNo * 15}
+              onClick={() => {
+                setPageNo((page) => page + 1);
+              }}>
+              <span>
+                Next <img src={rightArr} alt='' style={{ marginLeft: "4px" }} />
+              </span>
+            </button>
+          </>
+        )}
       </div>
     </>
   );

@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import classes from './layout.module.css'
+import classes from "./layout.module.css";
 
-function Layout({children}) {
-    return (
-        <div className={classes.wrapper}>
-            {children}
-        </div>
-    )
+function Layout({ children }) {
+  return <div className={classes.wrapper}>{children}</div>;
 }
 
-export default Layout
+export default Layout;

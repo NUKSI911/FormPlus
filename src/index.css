@@ -1,7 +1,19 @@
-
+/* Installation Of Circular Font  */
 @font-face {
   font-family: 'Circular';
   src:url('./assets/fonts/Circular\ Std\ Font.otf')  format('truetype')
+}
+
+
+
+html,body {
+  margin: 0;
+  color:#555;
+  font-size:18px;
+  line-height: 1.4rem;
+
+ 
+
 }
 
 
@@ -21,7 +33,7 @@ body {
   margin:0;
 }
 
-
+/* Default style for headers */
 
 h1,h2,h3,h4,h5,h6 {
   color:#222;
@@ -32,14 +44,4 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-
-html,body {
-  margin: 0;
-  color:#555;
-  font-size:18px;
-  line-height: 1.4rem;
-
- 
-
-}
 

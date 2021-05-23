@@ -8,7 +8,6 @@ function Dropdown({
   options,
   handleChange,
 }) {
-
   return (
     <>
       <SingleSelect

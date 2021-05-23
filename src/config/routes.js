@@ -1,10 +1,10 @@
-import   Template  from '../pages/Template/Template'
+import Template from "../pages/Template/Template";
 
- const routes = [
-    {
-        path:"/",
-        exact:true,
-        component:Template
-    }
-]
-export default routes
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    component: Template,
+  },
+];
+export default routes;
