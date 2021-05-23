@@ -91,6 +91,7 @@
 }
 
 .noTotalContainer {
+
 }
 
 .presentPageNo {
@@ -163,4 +164,18 @@
   .searchIcon {
     width: 10%;
   }
+}
+
+@media screen and (max-width: 460px) {
+    .paginateContainer{
+        padding:10px
+    }
+
+    .noTotalContainer{
+        align-content: center;
+    align-self: center;
+    }
+    .paginateBtn {
+        margin: 0 5px;
+    }
 }
