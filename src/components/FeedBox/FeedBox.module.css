@@ -1,0 +1,10 @@
+.feedBackWrapper{
+    background: #FFF4EA;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    margin:10px;
+    font-size: 16px;
+    line-height: 22px;
+}

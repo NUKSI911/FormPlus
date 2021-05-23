@@ -1,0 +1,12 @@
+/* app wrapper */
+.wrapper {
+    padding:5vh 5vw;
+
+}
+
+
+@media screen and (max-width:480px) {
+    .wrapper {
+        margin:10px ;
+    }
+}
