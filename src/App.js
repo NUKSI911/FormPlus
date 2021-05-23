@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     fetchData();
     setCategoryValue("All")
-    setDateValue("Defaut")
+    setDateValue("Default")
     setOrderValue("Default")
   }, []);
 
