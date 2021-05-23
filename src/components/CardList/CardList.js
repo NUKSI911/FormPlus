@@ -5,7 +5,6 @@ import classes from "./CardList.module.css";
 import Skeleton from "react-loading-skeleton";
 
 function CardList({ data }) {
-    console.log("data",data)
   let skeletonArrayList = new Array(15).fill(0);
   return (
     <div className={classes.cardListWrapper}>
