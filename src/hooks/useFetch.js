@@ -10,10 +10,9 @@ const useFetch =  ({url,headerOption}) => {
     const  fetchData = async()=>{
         try {
 
-        await Axios.get(`https://cors.bridged.cc/${url}`,{
+        await Axios.get(`https://cors-anywhere.herokuapp.com/${url}`,{
             headers:{ 
                 'Content-Type': 'application/json',
-                'origin':"",
                 ...headerOption}
         }).then(response => {
             if(response.status === 200){
