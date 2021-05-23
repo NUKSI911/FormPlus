@@ -24,6 +24,9 @@ Star⭐ the repo if you like what you see😉.
 
 In the project directory, you can run:
 
+### `npm install`
+
+Run to install all neccessary dependencies.
 ### `npm start`
 
 Runs the app in the development mode.
