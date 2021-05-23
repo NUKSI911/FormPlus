@@ -9,7 +9,6 @@ function Dropdown({
   handleChange,
 }) {
 
-    console.log(value)
   return (
     <>
       <SingleSelect
