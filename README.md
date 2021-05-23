@@ -29,7 +29,7 @@ Star⭐ the repo if you like what you see😉.
 
 ### 📮Issues Encountered
 
-#CORS
+CORS - Solved By Utilising CORS-Anywhere
 
 
 ## 🤓 Author(s)
