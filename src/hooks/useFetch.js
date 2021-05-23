@@ -1,5 +1,6 @@
 import React ,{useState } from 'react'
 import Axios  from 'axios'
+import ApiEndPoint from '../config/endPoints'
 
 
 const useFetch =  ({url,headerOption}) => {
@@ -10,7 +11,7 @@ const useFetch =  ({url,headerOption}) => {
     const  fetchData = async()=>{
         try {
 
-        await Axios.get(`https://cors-anywhere.herokuapp.com/${url}`,{
+        await Axios.get(`${ApiEndPoint.BASE_URL}/${url}`,{
             headers:{ 
                 'Content-Type': 'application/json',
                 ...headerOption}

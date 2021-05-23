@@ -172,11 +172,20 @@
         padding:10px
     }
 
+    .presentPageNo {
+      padding:0px 5px
+    }
+
+    .pagItem {
+      margin : 0 3px
+    }
     .noTotalContainer{
         align-content: center;
     align-self: center;
+    display:flex
     }
     .paginateBtn {
+      flex:0 0 30%;
         margin: 0 5px;
     }
 }
