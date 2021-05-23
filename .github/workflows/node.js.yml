@@ -11,24 +11,21 @@ on:
 
 jobs:
   build:
-
+    name: deploy 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    
     steps:
     - name: Template Page Task
     - uses: actions/checkout@v2
 
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-
+        node-version: 13.x
+        
+    - name: Install depenedencies
       run: npm ci
       
     - name: Run the tests
