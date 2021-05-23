@@ -45,7 +45,13 @@ function Template({
         </div>
 
         <div className={classes.dropdownsWrapper}>
-          <span classname={classes.sortlabel}>Sort By:</span>
+          <span style={{
+               fontSize: '14px',
+               lineHeight: '16px',
+               color: '#989898',
+               marginRight:'20px',
+               
+          }}>Sort By:</span>
           <div className={classes.dropdown}>
             <Dropdown
               label='Category'
