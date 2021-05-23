@@ -1,149 +1,166 @@
+.templateTopSec {
+  display: flex;
+  justify-content: space-between;
+}
+.templateHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
 
-  .templateTopSec{
-    display: flex;
-    justify-content: space-between;
-}
-.templateHeader{
-    display: flex;
-    justify-content: space-between;
-    margin:20px 0;
+.templateHeaderItem {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  color: #3f3e3e;
 }
 
-.templateHeaderItem{
-    font-size: 20px;
-    line-height: 23px;
-    font-weight: 500;
-    
+.templateHeaderSummary {
+  font-size: 16px;
+  line-height: 18px;
+  color: #989898;
 }
+
+.advertContainer {
+  font-size: 16px;
+  line-height: 22px;
+  color: #252525;
+}
+
 .searchContainer {
-    display:flex;
-    align-items: center;
-    border: 1px solid #BDBDBD;
-    justify-content: space-between;
-    border-radius: 5px;
-    width:30%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  justify-content: space-between;
+  border-radius: 5px;
+  width: 30%;
 }
 .searchIcon {
-    width:10%
+  width: 10%;
 }
 .searchBox::placeholder {
-    font-size: 16px;
-    line-height: 20px;    
-    color: #8F8B8B;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8f8b8b;
 }
 
-.searchBox,.searchBox:hover,.searchBox:focus-within {
-    outline: none;
-    border:none;
+.searchBox,
+.searchBox:hover,
+.searchBox:focus-within {
+  outline: none;
+  border: none;
 }
-.searchBox{
-    width:90%;
-    border: none;
-    padding:14px 15px 14px 32px; 
-    border-radius:5px;
+.searchBox {
+  width: 90%;
+  border: none;
+  padding: 14px 15px 14px 32px;
+  border-radius: 5px;
 }
-.dropdownsWrapper{
-    width:60%;
-    display:inline-flex;
-    justify-content: stretch;
-    align-items: center;
+.dropdownsWrapper {
+  width: 60%;
+  display: inline-flex;
+  justify-content: stretch;
+  align-items: center;
 }
-
 
 .dropdown {
-    flex:1 1 auto;
-    margin-right: 20px;
-    /* border: 1px solid black */
+  flex: 1 1 auto;
+  margin-right: 20px;
+  /* border: 1px solid black */
 }
 
-
-.feedBoxWrapper{
-    margin: 80px 0 60px;
+.feedBoxWrapper {
+  margin: 80px 0 60px;
 }
 .paginateContainer {
-    padding:30px;
-    display: flex;
-    font-weight: 500;
-font-size: 18px;
-line-height: 23px;
-    justify-content: space-between;
+  padding: 30px;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  justify-content: space-between;
 }
 
-
-.paginateBtn{
-    margin:0 20px;
-    border:none;
-    background:none;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
-   
+.paginateBtn {
+  margin: 0 20px;
+  border: none;
+  background: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 .noTotalContainer {
-    
 }
 
 .presentPageNo {
-
-    padding:4px 10px;
-    border-radius: 3px;
-    border: 1px solid #3F3F3F;
+  padding: 4px 10px;
+  border-radius: 3px;
+  border: 1px solid #3f3f3f;
 }
 
 .pagItem {
-
-    display: inline-block;
-    margin : 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .sortlabel {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 16px;
-    color: #989898;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 16px;
+  color: #989898;
 }
-
 
 /* Media Query  */
-@media screen and (max-width:1200px) {
-  .dropdownsWrapper{
-    width: 65%;
+@media screen and (max-width: 1200px) {
+  .templateTopSec {
+    flex-direction: column;
+  }
+  .searchContainer,
+  .dropdownsWrapper {
+    width: 100%;
   }
 
-  .dropdown{
-      margin-right: 10px;
+  .dropdownsWrapper {
+    margin: 20px 0 0;
   }
-    .searchBox{
-        width:80%;
-    }
 
-    .searchIcon {
-        width:20%;
-    }
+  .dropdown {
+    margin-right: 10px;
+  }
+  .searchBox {
+    width: 93%;
+  }
+
+  .searchIcon {
+    width: 5%;
+  }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 720px) {
+  .templateTopSec {
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdownsWrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+  .searchContainer {
+    width: 100%;
+  }
+  .dropdown {
+    flex: 1 0 100%;
+    align-self: stretch;
+    margin-right: 0px;
+    /* border: 1px solid black */
+  }
+  .searchBox {
+    width: 90%;
+    padding: 14px 15px 14px 20px;
+  }
 
-    .templateTopSec{
-        display: flex;
-        flex-direction: column;
-    }
-    .dropdownsWrapper{
-        width:100%;
-        flex-direction: column;
-    }   
-    .searchContainer {
-        width: 100%;
-
-    }
-    .dropdown {
-        flex:1 0 100%;
-        align-self: stretch;
-        margin-right: 0px;
-        /* border: 1px solid black */
-    }
-
-    
+  .searchIcon {
+    width: 10%;
+  }
 }
-

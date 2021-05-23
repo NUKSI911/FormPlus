@@ -79,7 +79,7 @@ function Template({
           <FeedBox>
               <>
               <img src={exclamationIcon} alt="" style={{padding:'0 10px'}} />
-              <p>
+              <p className={classes.advertContainer}>
               Tada! Get started with a free template. Can’t find what you are looking for? Search from the 1000+ available templates
               </p>
               </>
@@ -88,7 +88,7 @@ function Template({
       </div>
       <div className={classes.templateHeader}>
         <span className={classes.templateHeaderItem}> {categoryValue} Templates</span>
-        <span  className={classes.templateHeaderItem}>{resultSummary}</span>
+        <span  className={classes.templateHeaderSummary}>{resultSummary}</span>
       </div>
       <div>
         <CardList data={data} />

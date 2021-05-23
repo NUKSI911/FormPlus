@@ -14,7 +14,7 @@ function CardList({data}) {
              {data.length > 0 ?  data?.map((template, i) => (
           <Card data={template} key={i} />
 
-        )) : skeletonArrayList.map((item,i)=> <Skeleton  key={i} height={300} width={400} />)}
+        )) : skeletonArrayList.map((item,i)=> <Skeleton  key={i} height={300} width={300} />)}
         </div>
     )
 }
