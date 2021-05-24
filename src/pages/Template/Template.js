@@ -9,6 +9,7 @@ import exclamationIcon from "../../assets/icons/exclamation.svg";
 import rightArr from "../../assets/icons/rightArr.svg";
 import FeedBox from "../../components/FeedBox/FeedBox";
 import { advertMsg } from "./../../config/Config";
+import Loader from "react-loader-spinner";
 
 function Template({
   templates,
@@ -23,6 +24,7 @@ function Template({
 }) {
   const [data, setData] = useState([]);
   const [pageNo, setPageNo] = useState(1);
+  const [resultSummary,setResultSummary ] = useState(null)
   const totalPages = Number(templates.length)
     ? Math.round(templates?.length / 15)
     : null;
@@ -40,9 +42,13 @@ function Template({
     paginator();
   }, [templates, paginator, pageNo]);
 
-  const resultSummary = `${templates.length || 0} Templates ${
-    categoryValue !== "All" || searchTerm !== "" ? "Found" : ""
-  }`;
+  useEffect(()=>{
+
+ setResultSummary(`${templates.length || 0} Templates ${
+      categoryValue !== "All" || searchTerm !== "" ? "Found" : ""
+    }`
+    )
+  },[templates])
 
   return (
     <>
@@ -111,7 +117,7 @@ function Template({
           {" "}
           {categoryValue} Templates
         </span>
-        <span className={classes.templateHeaderSummary}>{resultSummary}</span>
+        <span className={classes.templateHeaderSummary}>{templates?.length === 0 ? <Loader type="Oval" color="grey" height={30} width={30}/> : resultSummary}</span>
       </div>
       <div>
         <CardList data={data} />
