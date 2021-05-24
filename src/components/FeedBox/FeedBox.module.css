@@ -1,10 +1,10 @@
 .feedBackWrapper {
   background: #fff4ea;
-  border-radius:0.5rem;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  margin: 1rem;
-  font-size: 1.6rem;
-  line-height: 2.2rem;
+  padding: 20px;
+  margin: 10px;
+  font-size: 16px;
+  line-height: 22px;
 }
