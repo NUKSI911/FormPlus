@@ -75,4 +75,5 @@ CORS - Solved By Utilising CORS-Anywhere
 
 ## 🔖 LICENCE
 
-[WTFPL](http://www.wtfpl.net/about/)
+This project is licensed under the [MIT 2.0 License](LICENSE) which allows very broad use for both academic and commercial purposes.
+
