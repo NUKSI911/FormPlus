@@ -25,7 +25,7 @@ const useFetch = ({ url, headerOption }) => {
     })
   };
 
-  fetchData()
+  console.log(data)
   return { fetchData, data, errorMsg };
 }
 
