@@ -57,7 +57,7 @@ Your app is ready to be deployed!
 ## Deployment
 
 The application master branch is automatically linked to deploy to the production environment available on [Netlify](https://formplus-task.netlify.app) which enables
-testing of newly integrated features,buil details can be seen in the `netlify.toml` configuration file.
+testing of newly integrated features,build details can be seen in the `netlify.toml` configuration file.
 
 
 ### 📮Issues Encountered
