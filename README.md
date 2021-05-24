@@ -1,11 +1,11 @@
-# Template Page Task - REACT 🔥 [![netlify](https://img.shields.io/netlify/ac318cf7-3b66-44f1-b18b-4b283dca4809)](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
+# Template Page Task - REACT 🔥 [![Netlify](https://img.shields.io/netlify/ac318cf7-3b66-44f1-b18b-4b283dca4809) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nuksi911/FormPlus/Template-Home) 
+](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
 
 A Template Page built with React and Redux . Improving day by day.
 
 [Here](https://formplus-task.netlify.app/) is the link to the Live Demo
 
 Star⭐ the repo if you like what you see😉.
-
 ## 📖Table of contents
 
 - [Techologies](#technologies)
