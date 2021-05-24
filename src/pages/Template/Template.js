@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import PropTypes from 'prop-types'
 import CardList from "../../components/CardList/CardList";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import classes from "./Template.module.css";
@@ -157,3 +158,14 @@ function Template({
 
 export default Template;
 
+Template.propTypes = {
+  templates:PropTypes.oneOfType([PropTypes.object,PropTypes.array]).isRequired,
+  handleCategoryChange:PropTypes.func.isRequired,
+  handleOrderChange:PropTypes.func.isRequired,
+  handleDateChange:PropTypes.func.isRequired,
+  categoryValue:PropTypes.string.isRequired,
+  dateValue:PropTypes.string.isRequired,
+  orderValue:PropTypes.string.isRequired,
+  handleSearchTerm:PropTypes.func.isRequired,
+  searchTerm:PropTypes.string.isRequired,
+} 
