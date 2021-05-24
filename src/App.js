@@ -192,7 +192,7 @@ function App() {
         ))}
         <Route 
             
-            path="/*"
+            path="/**"
             render = {(props)=>(<NotFound {...props} />) }
             />
       </Switch>
