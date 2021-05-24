@@ -7,6 +7,7 @@ import { insertTemplateData } from "./pages/Template/Store/template.action";
 import ApiEndPoints from "./config/endPoints";
 import useFetch from "./hooks/useFetch";
 import "./App.css";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const { fetchData, data, errorMsg } = useFetch({
@@ -182,9 +183,18 @@ function App() {
                 handleSearchTerm={handleSearchTerm}
                 searchTerm={searchTerm}
               />
-            )}
+            )
+          
+          
+          }
+            
           />
         ))}
+        <Route 
+            
+            path="/*"
+            render = {(props)=>(<NotFound {...props} />) }
+            />
       </Switch>
     </Layout>
   );
