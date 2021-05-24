@@ -41,7 +41,7 @@
   padding-left:5px;
 }
 .searchBox::placeholder {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 20px;
   color: #8f8b8b;
 }

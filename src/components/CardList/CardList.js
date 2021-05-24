@@ -3,6 +3,7 @@ import React from "react";
 import Card from "../Card/Card";
 import classes from "./CardList.module.css";
 import Skeleton from "react-loading-skeleton";
+import PropTypes from 'prop-types'
 
 function CardList({ data }) {
   let skeletonArrayList = new Array(15).fill(0);
@@ -22,3 +23,11 @@ function CardList({ data }) {
 }
 
 export default CardList;
+
+CardList.defaultProps = {
+  data:[]
+}
+
+CardList.propTypes = {
+  data:PropTypes.array.isRequired
+}

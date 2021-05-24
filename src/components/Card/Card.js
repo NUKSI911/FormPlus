@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Card.module.css";
+import PropTypes from 'prop-types'
 function Card({ data }) {
   return (
     <div className={classes.cardWrapper}>
@@ -17,3 +18,11 @@ function Card({ data }) {
 }
 
 export default Card;
+
+Card.defaultProps = {
+  data:[]
+}
+
+Card.propTypes = {
+  data:PropTypes.array.isRequired
+}
