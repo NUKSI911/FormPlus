@@ -11,6 +11,7 @@ Star⭐ the repo if you like what you see😉.
 - [Techologies](#technologies)
 - [Getting Started](#getting-started)
   - [Features](#features)
+  - [Deployment](#deployment)  
   - [Issues Encountered](#issue-encountered)
 
 ## 🛠️Technologies
@@ -50,6 +51,13 @@ Your app is ready to be deployed!
 ### ✨Features
 
 - [x] Home Page
+
+
+## Deployment
+
+The application master branch is automatically linked to deploy to the production environment available on [Netlify](https://formplus-task.netlify.app) which enables
+testing of newly integrated features.
+
 
 ### 📮Issues Encountered
 
