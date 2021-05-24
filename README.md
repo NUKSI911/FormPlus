@@ -1,5 +1,5 @@
-# Template Page Task - REACT 🔥 [![Netlify](https://img.shields.io/netlify/ac318cf7-3b66-44f1-b18b-4b283dca4809) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nuksi911/FormPlus/Template-Home) 
-](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
+# Template Page Task - REACT 🔥 ![Netlify](https://img.shields.io/netlify/ac318cf7-3b66-44f1-b18b-4b283dca4809) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nuksi911/FormPlus/Template-Home) 
+ [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
 
 A Template Page built with React and Redux . Improving day by day.
 
