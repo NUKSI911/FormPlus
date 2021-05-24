@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import { Switch, Route } from "react-router";
 import Layout from "./Layout/layout";
 import { useDispatch, useSelector } from "react-redux";
