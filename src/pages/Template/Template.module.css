@@ -59,11 +59,6 @@
   border-radius: 5px;
 }
 
-.searchBox:focus {
-
-  background-color: rgba(143, 139, 139, 0.1);
-}
-
 .dropdownsWrapper {
   width: 60%;
   display: inline-flex;
