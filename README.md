@@ -1,20 +1,24 @@
-# Template Page Task - REACT 🔥 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ac318cf7-3b66-44f1-b18b-4b283dca4809/deploy-status)](https://app.netlify.com/sites/formplus-task/deploys) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nuksi911/FormPlus/Template-Home) 
- [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
- [![JavaScript](https://img.shields.io/badge/-JavaScript-fff?&logo=JavaScript&logoColor=ddc508)]()
+# Template Page Task - REACT 🔥
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ac318cf7-3b66-44f1-b18b-4b283dca4809/deploy-status)](https://app.netlify.com/sites/formplus-task/deploys) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nuksi911/FormPlus/Template-Home)
+[![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
+
+[![JavaScript](https://img.shields.io/badge/-JavaScript-fff?&logo=JavaScript&logoColor=ddc508)]()
 ![React](https://img.shields.io/badge/-React-fff?&logo=React)
 ![Redux](https://img.shields.io/badge/-Redux-fff?&logo=Redux&logoColor=764abc)
+
 A Template Page built with React and Redux . Improving day by day.
 
 [Here](https://formplus-task.netlify.app/) is the link to the Live Demo
 
 Star⭐ the repo if you like what you see😉.
+
 ## 📖Table of contents
 
 - [Techologies](#technologies)
 - [Getting Started](#getting-started)
   - [Features](#features)
-  - [Deployment](#deployment)  
+  - [Deployment](#deployment)
   - [Issues Encountered](#issue-encountered)
 
 ## 🛠️Technologies
@@ -31,6 +35,7 @@ In the project directory, you can run:
 ### `npm install`
 
 Run to install all neccessary dependencies.
+
 ### `npm start`
 
 Runs the app in the development mode.
@@ -55,12 +60,10 @@ Your app is ready to be deployed!
 
 - [x] Home Page
 
-
 ## Deployment
 
 The application master branch is automatically linked to deploy to the production environment available on [Netlify](https://formplus-task.netlify.app) which enables
 testing of newly integrated features,build details can be seen in the `netlify.toml` configuration file.
-
 
 ### 📮Issues Encountered
 

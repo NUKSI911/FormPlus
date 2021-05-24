@@ -4,7 +4,7 @@ import Card from "../Card";
 
 let mockData = {
   name: "Nurudeen Yekeen",
-  description: "A Frontend Developer With An Eye For Intricate Design",
+  description: "Front End Engineer with a strong foundation in UX principles. I'm interested in working on interesting and valuable projects.",
   link: "https://formplus-task.netlify.app",
 };
 
