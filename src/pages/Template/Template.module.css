@@ -60,7 +60,7 @@
 }
 
 .dropdownsWrapper {
-  width: 60%;
+  width: 50%;
   display: inline-flex;
   justify-content: stretch;
   align-items: center;
@@ -148,7 +148,10 @@
   }
 
   .searchIcon {
-    width: 5%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -198,5 +201,9 @@
     .paginateBtn {
       flex:0 0 30%;
         margin: 0 5px;
+    }
+    .searchIcon {
+      width: 15%;
+      padding-left: 0px;
     }
 }
