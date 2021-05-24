@@ -1,4 +1,4 @@
-# Template Page Task - REACT 🔥 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
+# Template Page Task - REACT 🔥 [![netlify](https://img.shields.io/netlify/ac318cf7-3b66-44f1-b18b-4b283dca4809)](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
 
 A Template Page built with React and Redux . Improving day by day.
 
