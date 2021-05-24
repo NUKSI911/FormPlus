@@ -179,7 +179,8 @@
 
 @media screen and (max-width: 460px) {
     .paginateContainer{
-        padding:10px
+        padding:10px;
+        margin-top:10px;
     }
 
     .presentPageNo {
