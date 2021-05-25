@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useMemo } from "react";
 import ApiEndPoint from "../config/endPoints";
 
 
@@ -7,7 +7,7 @@ const useFetch = ({ url, headerOption }) => {
   const [errorMsg, setErrorMsg] = useState(null);
 
 
-    const templateWorker = new Worker('./worker.js');
+    const templateWorker =useMemo(()=> new Worker('./worker.js'),[]);
     
 const fetchData = () =>{
 
