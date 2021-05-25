@@ -15,25 +15,30 @@ const fetchData = () =>{
 }
   
     
+const handleMessage =  (e)=>{
+  if(e.data.responseData){
+    setData(e.data.responseData)
+    templateWorker.terminate()
+  }
+}
    
+const handleError =  (e)=>{
+  if(e.message){
+    setErrorMsg(e.message)
+    templateWorker.terminate()
+  }
+}
 
   useEffect(()=>{
 
-    templateWorker.addEventListener('message',async (e)=>{
-      if(e.data.responseData){
-        setData(e.data.responseData)
-        templateWorker.terminate()
-      }
-    })
-
-    templateWorker.addEventListener('error',async (e)=>{
-      if(e.message){
-        setErrorMsg(e.message)
-        templateWorker.terminate()
-      }
-    })
   
+    templateWorker.onmessage = handleMessage
+
+    templateWorker.onerror = handleError
+  
+    
   },[templateWorker])
+
   return { fetchData, data, errorMsg };
 }
 

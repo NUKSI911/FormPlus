@@ -21,6 +21,7 @@ function Template({
   orderValue,
   handleSearchTerm,
   searchTerm,
+  errorMsg
 }) {
   const [data, setData] = useState([]);
   const [pageNo, setPageNo] = useState(1);
@@ -48,7 +49,7 @@ function Template({
       categoryValue !== "All" || searchTerm !== "" ? "Found" : ""
     }`
     )
-  },[templates])
+  },[templates,searchTerm,categoryValue])
 
   return (
     <>

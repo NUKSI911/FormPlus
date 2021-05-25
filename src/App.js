@@ -182,6 +182,7 @@ function App() {
                 orderValue={orderValue}
                 handleSearchTerm={handleSearchTerm}
                 searchTerm={searchTerm}
+                errorMsg={errorMsg}
               />
             )
           
