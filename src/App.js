@@ -51,19 +51,27 @@ function App() {
 
   const handleSearchTerm = (e) => {
     setSearchTerm(e.target.value);
+    handleSearch();
   };
   const handleCategoryChange = (value) => {
     setCategoryValue(value);
+    filterByCategory();
   };
   const handleOrderChange = (value) => {
     setOrderValue(value);
+    handleTemplateReordering();
+
   };
   const handleDateChange = (value) => {
     setDateValue(value);
+    filterByDate();
   };
 
   const filterByCategory = () => {
     let tempData = templates;
+    setDateValue("Default");
+    setSearchTerm("");
+    setOrderValue("Default")
     if (categoryValue !== "All" && Array.isArray(tempData)) {
       const filteredTemplate = tempData.filter((template) => {
         return template.category.some(
@@ -145,22 +153,6 @@ function App() {
       setResolvedData(tempData);
     }
   };
-
-  useEffect(() => {
-    handleSearch();
-  }, [searchTerm]);
-
-  useEffect(() => {
-    filterByCategory();
-  }, [categoryValue]);
-
-  useEffect(() => {
-    handleTemplateReordering();
-  }, [orderValue]);
-
-  useEffect(() => {
-    filterByDate();
-  }, [dateValue]);
 
   return (
     <Layout>
