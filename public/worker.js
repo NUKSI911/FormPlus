@@ -12,11 +12,10 @@ self.addEventListener('message',(e)=>{
             
             },
           }).then(response=>response.json()).then((jsonResponse) => {
-            console.log(jsonResponse)
-          if (jsonResponse.ok) {
-              let responseData=jsonResponse.data
+          
+              let responseData=jsonResponse
               self.postMessage({responseData})
-          }
+          
         })
         .catch((error) => self.postMessage({error}));
     } catch (error) {
