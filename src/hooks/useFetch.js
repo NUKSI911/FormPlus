@@ -11,7 +11,7 @@ const useFetch = ({ url, headerOption }) => {
     
 const fetchData = () =>{
 
-  templateWorker.postMessage({url:`${ApiEndPoint.BASE_URL}${url}`})
+  templateWorker.postMessage({url:`${ApiEndPoint.BASE_URL}/${url}`})
 }
   
     
