@@ -33,7 +33,7 @@ const fetchData = () =>{
       }
     })
   
-  },[])
+  },[templateWorker])
   console.log(data)
   return { fetchData, data, errorMsg };
 }
