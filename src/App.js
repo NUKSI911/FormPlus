@@ -10,7 +10,7 @@ import "./App.css";
 import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
-  const { fetchData, data, errorMsg } = useFetch({
+  const {  fetchData,data, errorMsg } = useFetch({
     url: ApiEndPoints.GET_TEMPLATE,
   });
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function App() {
   const [resolvedData, setResolvedData] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchData()
     setCategoryValue("All");
     setDateValue("Default");
     setOrderValue("Default");
