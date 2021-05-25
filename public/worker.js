@@ -11,9 +11,10 @@ self.addEventListener('message',(e)=>{
               "Content-Type": "application/json",
             
             },
-          }).then(response=>response.json()).then((jsonRepsonse) => {
-          if (jsonRepsonse.status === 200) {
-              let responseData=jsonRepsonse.data
+          }).then(response=>response.json()).then((jsonResponse) => {
+            console.log(jsonResponse)
+          if (jsonResponse.ok) {
+              let responseData=jsonResponse.data
               self.postMessage({responseData})
           }
         })
