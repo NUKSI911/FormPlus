@@ -4,16 +4,16 @@
 self.addEventListener('message',(e)=>{
     let url = e.data.url;
 
-    const fetch = async (url)=>{
+  
       try {
-          await fetch(url, {
+           fetch(url, {
             headers: {
               "Content-Type": "application/json",
             
             },
-          }).then((response) => {
-          if (response.status === 200) {
-              let responseData=response.data
+          }).then(response=>response.json()).then((jsonRepsonse) => {
+          if (jsonRepsonse.status === 200) {
+              let responseData=jsonRepsonse.data
               self.postMessage({responseData})
           }
         })
@@ -21,10 +21,8 @@ self.addEventListener('message',(e)=>{
     } catch (error) {
       self.postMessage({error})
     }
-  }
   
-
-   fetch(url)
+  
    
 })
 

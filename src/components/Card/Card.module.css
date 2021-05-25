@@ -7,12 +7,8 @@
   justify-content: space-between;
 }
 
-/* only hover supported devices  */
-@media (hover:hover) {
-  .cardWrapper:hover {
-    box-shadow: 0px 10px 50px rgba(58, 40, 40, 0.4);
-  }
-  
+.cardWrapper:hover {
+  box-shadow: 0px 10px 50px rgba(58, 40, 40, 0.4);
 }
 
 .linkWrapper,
