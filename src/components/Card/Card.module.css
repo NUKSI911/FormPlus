@@ -56,7 +56,7 @@ h1 {
 }
 
 .cardDesc {
-  font-size:13px;
+  font-size:15px;
 }
 .cardDesc::first-letter {
 text-transform: capitalize;
