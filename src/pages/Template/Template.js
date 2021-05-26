@@ -51,6 +51,14 @@ function Template({
     )
   },[templates,searchTerm,categoryValue])
 
+
+  const scrollToTop = ( ) =>{
+    window.scroll({
+      top:0,
+      left:0,
+      behavior:'smooth'
+    })
+  }
   return (
     <>
       <div className={classes.templateTopSec}>
@@ -132,6 +140,7 @@ function Template({
               disabled={pageNo === 1}
               onClick={() => {
                 setPageNo((page) => page - 1);
+                scrollToTop()
               }}>
               <span>Previous</span>
             </button>
@@ -151,6 +160,7 @@ function Template({
               disabled={templates.length < pageNo * 15}
               onClick={() => {
                 setPageNo((page) => page + 1);
+                scrollToTop()
               }}>
               <span>
                 Next <img src={rightArr} alt='' style={{ marginLeft: "4px" }} />
