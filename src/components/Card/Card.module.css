@@ -51,11 +51,14 @@ h1 {
 
 
 
-.contentHeader{
+.contentTitle{
   text-transform: capitalize;
 }
 
+.cardDesc {
+  font-size:13px;
+}
 .cardDesc::first-letter {
 text-transform: capitalize;
-font-size:13px;
+
 }
