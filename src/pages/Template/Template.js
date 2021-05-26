@@ -39,9 +39,24 @@ function Template({
     setPageNo((pageNo) => pageNo);
   }, [pageNo, templates]);
 
+  const [width, setWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     paginator();
   }, [templates, paginator, pageNo]);
+
+  const updateState = () => {
+    setWidth(window.innerWidth);
+  };
+
+
+  useEffect(() => {
+    window.addEventListener("resize", updateState);
+
+    return () => {
+      window.removeEventListener("resize", updateState);
+    };
+  }, []);
 
   useEffect(()=>{
 
@@ -132,9 +147,12 @@ function Template({
         <CardList data={data} />
       </div>
 
-      <div className={classes.paginateContainer}>
+      <div className={classes.paginateContainer} style = {{
+            position :  width < 350 ? "sticky":'initial',
+            bottom:0
+          }}>
         {data?.length > 0 && (
-          <>
+          < >
             <button
               className={classes.paginateBtn}
               disabled={pageNo === 1}

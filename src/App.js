@@ -14,7 +14,6 @@ function App() {
     url: ApiEndPoints.GET_TEMPLATE,
   });
   const dispatch = useDispatch();
-  const [width, setWidth] = useState(window.innerWidth);
 
   const [categoryValue, setCategoryValue] = useState("");
   const [orderValue, setOrderValue] = useState("");
@@ -37,17 +36,8 @@ function App() {
     setResolvedData(data);
   }, [data]);
 
-  const updateState = () => {
-    setWidth(window.innerWidth);
-  };
 
-  useEffect(() => {
-    window.addEventListener("resize", updateState);
-
-    return () => {
-      window.removeEventListener("resize", updateState);
-    };
-  }, []);
+  
 
   const handleSearchTerm = (e) => {
     setSearchTerm(e.target.value);
