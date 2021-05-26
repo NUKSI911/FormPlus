@@ -149,7 +149,8 @@ function Template({
 
       <div className={classes.paginateContainer} style = {{
             position :  width < 350 ? "sticky":'initial',
-            bottom:0
+            bottom:0,
+            background:  width < 350 ? '#fff' :'initial'
           }}>
         {data?.length > 0 && (
           < >
