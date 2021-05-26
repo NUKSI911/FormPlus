@@ -8,7 +8,7 @@
 }
 
 .cardWrapper:hover {
-  box-shadow: 0px 10px 30px rgba(58, 40, 40, 0.4);
+  box-shadow: 0px 10px 15px rgba(58, 40, 40, 0.3);
   border-radius: 5px;
 
 }
@@ -30,10 +30,13 @@ a:hover {
 .cardContent {
   flex: 1 1 70%;
   padding: 18px;
+  
+}
+
+.linkWrapper,.cardContent {
   border-radius: 5px;
 
 }
-
 h1 {
   font-weight: 500;
   font-size: 24px;
