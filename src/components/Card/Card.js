@@ -5,7 +5,7 @@ function Card({ data }) {
   return (
     <div className={classes.cardWrapper}>
       <div className={classes.cardContent}>
-        <h1>{data.name}</h1>
+        <h1 className={classes.contentTitle}>{data.name}</h1>
         <p className={classes.cardDesc}>{data.description}</p>
       </div>
       <div className={classes.linkWrapper}>
