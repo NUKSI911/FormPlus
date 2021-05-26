@@ -49,15 +49,8 @@ h1,h2,h3,h4,h5,h6 {
   width: 10px;
 }
 
-
- 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background:#252525; 
   border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
 }
