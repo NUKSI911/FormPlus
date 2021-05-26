@@ -1,9 +1,7 @@
 import React from "react";
-import { SingleSelect } from "react-select-material-ui";
-import PropTypes from 'prop-types'
-
+import PropTypes from "prop-types";
+import classes from "./Dropdown.module.css";
 function Dropdown({
-  variant = "outlined",
   label,
   value,
   options,
@@ -11,13 +9,18 @@ function Dropdown({
 }) {
   return (
     <>
-      <SingleSelect
-        variant={variant}
-        label={label}
-        value={value}
-        options={options}
-        onChange={handleChange}
-      />
+      <div className={classes.select}>
+        <select onChange={handleChange} value={value} className={classes["select-text"]} required>
+          {options.map((option) => {
+            return (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            );
+          })}
+        </select>
+        <label className={classes['select-label']}>{label}</label>
+      </div>
     </>
   );
 }
@@ -25,17 +28,14 @@ function Dropdown({
 export default Dropdown;
 
 Dropdown.defaultProps = {
-  variant:"outlined",
-  label:"Fill in Label",
-  value:"",
-  options : []
-}
-
+  label: "Fill in Label",
+  value: "",
+  options: [],
+};
 
 Dropdown.propTypes = {
-  variant:PropTypes.string,
-  label:PropTypes.string.isRequired,
-  value:PropTypes.string.isRequired,
-  options:PropTypes.array.isRequired,
-  handleChange:PropTypes.func.isRequired,
-}
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

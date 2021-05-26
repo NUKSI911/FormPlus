@@ -85,7 +85,7 @@ function Template({
             placeholder='Search Templates'
           />
           <span className={classes.searchIcon}>
-            <img src={searchIcon} alt='' width={25} />
+            <img src={searchIcon} alt='' width={20} />
           </span>
         </div>
 

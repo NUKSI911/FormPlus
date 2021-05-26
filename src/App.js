@@ -43,16 +43,16 @@ function App() {
     setSearchTerm(e.target.value);
    
   };
-  const handleCategoryChange = (value) => {
-    setCategoryValue(value);
+  const handleCategoryChange = (e) => {
+    setCategoryValue(e.target.value);
   };
-  const handleOrderChange = (value) => {
-    setOrderValue(value);
+  const handleOrderChange = (e) => {
+    setOrderValue(e.target.value);
    
 
   };
-  const handleDateChange = (value) => {
-    setDateValue(value);
+  const handleDateChange = (e) => {
+    setDateValue(e.target.value);
   
   };
 

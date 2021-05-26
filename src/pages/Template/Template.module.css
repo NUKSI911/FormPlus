@@ -38,7 +38,9 @@
 }
 .searchIcon {
   width: 10%;
-  padding-left:5px;
+  display: flex;
+  padding-left: 5px;
+  justify-content: center;
 }
 .searchBox::placeholder {
   font-size: 12px;
@@ -150,6 +152,7 @@
   .searchIcon {
     width: 7%;
     display: flex;
+    padding: 4px;
     justify-content: center;
     align-items: center;
   }
