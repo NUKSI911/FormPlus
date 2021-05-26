@@ -51,21 +51,37 @@ function App() {
 
   const handleSearchTerm = (e) => {
     setSearchTerm(e.target.value);
-    handleSearch();
+   
   };
   const handleCategoryChange = (value) => {
     setCategoryValue(value);
-    filterByCategory();
   };
   const handleOrderChange = (value) => {
     setOrderValue(value);
-    handleTemplateReordering();
+   
 
   };
   const handleDateChange = (value) => {
     setDateValue(value);
-    filterByDate();
+  
   };
+
+  useEffect(()=>{
+    filterByCategory();
+  },[categoryValue])
+
+  useEffect(()=>{
+    handleTemplateReordering();
+  },[orderValue])
+
+  useEffect(()=>{
+    filterByDate();
+  },[dateValue])
+  
+  useEffect(()=>{
+    handleSearch();
+  },[searchTerm])
+
 
   const filterByCategory = () => {
     let tempData = templates;
