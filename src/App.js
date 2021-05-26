@@ -72,7 +72,7 @@ function App() {
     setDateValue("Default");
     setSearchTerm("");
     setOrderValue("Default")
-    if (categoryValue !== "All" && Array.isArray(tempData)) {
+    if (categoryValue !== "All") {
       const filteredTemplate = tempData.filter((template) => {
         return template.category.includes(categoryValue)
       });
