@@ -74,9 +74,7 @@ function App() {
     setOrderValue("Default")
     if (categoryValue !== "All" && Array.isArray(tempData)) {
       const filteredTemplate = tempData.filter((template) => {
-        return template.category.some(
-          (catgyItem) => (catgyItem = categoryValue)
-        );
+        return template.category.includes(categoryValue)
       });
       setResolvedData(filteredTemplate);
     } else if (categoryValue === "All") {
