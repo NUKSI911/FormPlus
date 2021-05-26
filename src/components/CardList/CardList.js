@@ -29,5 +29,5 @@ CardList.defaultProps = {
 }
 
 CardList.propTypes = {
-  data:PropTypes.array.isRequired
+  data:PropTypes.oneOfType([PropTypes.object,PropTypes.array]).isRequired
 }
