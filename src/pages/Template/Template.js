@@ -79,6 +79,7 @@ function Template({
       <div className={classes.templateTopSec}>
         <div className={classes.searchContainer}>
           <input
+            name="searchBox"
             className={classes.searchBox}
             value={searchTerm}
             onChange={handleSearchTerm}
