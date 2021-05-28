@@ -9,7 +9,7 @@ function Card({ data }) {
         <p className={classes.cardDesc}>{data.description}</p>
       </div>
       <div className={classes.linkWrapper}>
-        <a className={classes.cardLink} href={data.link} target='blank'>
+        <a className={classes.cardLink} href={data.link} target='blank' >
           Use Template
         </a>
       </div>

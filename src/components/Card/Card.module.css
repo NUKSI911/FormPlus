@@ -49,6 +49,7 @@ h1 {
 
 .cardLink {
   all: inherit;
+  pointer-events: none;
 }
 
 
