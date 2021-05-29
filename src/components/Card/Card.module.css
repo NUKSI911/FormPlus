@@ -52,6 +52,9 @@ h1 {
   pointer-events: none;
 }
 
+.cardLink:focus{
+
+}
 
 
 
