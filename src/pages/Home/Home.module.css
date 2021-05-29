@@ -37,6 +37,10 @@
   border-radius: 5px;
   width: 30%;
 }
+
+.searchContainer:focus-within {
+  border:2px solid #bdbdbd;
+}
 .searchIcon {
   width: 10%;
   display: flex;
