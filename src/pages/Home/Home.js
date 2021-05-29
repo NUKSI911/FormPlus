@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import CardList from "../../components/CardList/CardList";
 import Dropdown from "../../components/Dropdown/Dropdown";
-import classes from "./Template.module.css";
+import classes from "./Home.module.css";
 import { defaultOptions, categoryOptions } from "./../../config/Config";
 import searchIcon from "../../assets/icons/search.svg";
 import exclamationIcon from "../../assets/icons/exclamation.svg";
@@ -11,7 +11,7 @@ import FeedBox from "../../components/FeedBox/FeedBox";
 import { advertMsg } from "./../../config/Config";
 import Loader from "react-loader-spinner";
 
-function Template({
+function Home({
   templates,
   handleCategoryChange,
   handleOrderChange,
@@ -21,11 +21,11 @@ function Template({
   orderValue,
   handleSearchTerm,
   searchTerm,
-  errorMsg
+  errorMsg,
 }) {
   const [data, setData] = useState([]);
   const [pageNo, setPageNo] = useState(1);
-  const [resultSummary,setResultSummary ] = useState(null)
+  const [resultSummary, setResultSummary] = useState(null);
   const totalPages = Number(templates.length)
     ? Math.round(templates?.length / 15)
     : null;
@@ -49,7 +49,6 @@ function Template({
     setWidth(window.innerWidth);
   };
 
-
   useEffect(() => {
     window.addEventListener("resize", updateState);
 
@@ -58,28 +57,27 @@ function Template({
     };
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
+    setResultSummary(
+      `${templates.length || 0} Templates ${
+        categoryValue !== categoryOptions[0] || searchTerm !== "" ? "Found" : ""
+      }`
+    );
+  }, [templates, searchTerm, categoryValue]);
 
- setResultSummary(`${templates.length || 0} Templates ${
-      categoryValue !== "All" || searchTerm !== "" ? "Found" : ""
-    }`
-    )
-  },[templates,searchTerm,categoryValue])
-
-
-  const scrollToTop = ( ) =>{
+  const scrollToTop = () => {
     window.scroll({
-      top:'30%',
-      left:0,
-      behavior:'smooth'
-    })
-  }
+      top: "30%",
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className={classes.templateTopSec}>
         <div className={classes.searchContainer}>
           <input
-            name="searchBox"
+            name='searchBox'
             className={classes.searchBox}
             value={searchTerm}
             onChange={handleSearchTerm}
@@ -142,25 +140,33 @@ function Template({
           {" "}
           {categoryValue} Templates
         </span>
-        <span className={classes.templateHeaderSummary}>{templates?.length === 0 ? <Loader type="Oval" color="grey" height={30} width={30}/> : resultSummary}</span>
+        <span className={classes.templateHeaderSummary}>
+          {templates?.length === 0 ? (
+            <Loader type='Oval' color='grey' height={30} width={30} />
+          ) : (
+            resultSummary
+          )}
+        </span>
       </div>
       <div>
         <CardList data={data} />
       </div>
 
-      <div className={classes.paginateContainer} style = {{
-            position :  width < 420 ? "sticky":'initial',
-            bottom:0,
-            background:  width < 420 ? '#fff' :'initial'
-          }}>
+      <div
+        className={classes.paginateContainer}
+        style={{
+          position: width < 420 ? "sticky" : "initial",
+          bottom: 0,
+          background: width < 420 ? "#fff" : "initial",
+        }}>
         {data?.length > 0 && (
-          < >
+          <>
             <button
               className={classes.paginateBtn}
               disabled={pageNo === 1}
               onClick={() => {
                 setPageNo((page) => page - 1);
-                scrollToTop()
+                scrollToTop();
               }}>
               <span>Previous</span>
             </button>
@@ -180,7 +186,7 @@ function Template({
               disabled={templates.length < pageNo * 15}
               onClick={() => {
                 setPageNo((page) => page + 1);
-                scrollToTop()
+                scrollToTop();
               }}>
               <span>
                 Next <img src={rightArr} alt='' style={{ marginLeft: "4px" }} />
@@ -193,16 +199,17 @@ function Template({
   );
 }
 
-export default Template;
+export default Home;
 
-Template.propTypes = {
-  templates:PropTypes.oneOfType([PropTypes.object,PropTypes.array]).isRequired,
-  handleCategoryChange:PropTypes.func.isRequired,
-  handleOrderChange:PropTypes.func.isRequired,
-  handleDateChange:PropTypes.func.isRequired,
-  categoryValue:PropTypes.string.isRequired,
-  dateValue:PropTypes.string.isRequired,
-  orderValue:PropTypes.string.isRequired,
-  handleSearchTerm:PropTypes.func.isRequired,
-  searchTerm:PropTypes.string.isRequired,
-} 
+Home.propTypes = {
+  templates: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    .isRequired,
+  handleCategoryChange: PropTypes.func.isRequired,
+  handleOrderChange: PropTypes.func.isRequired,
+  handleDateChange: PropTypes.func.isRequired,
+  categoryValue: PropTypes.string.isRequired,
+  dateValue: PropTypes.string.isRequired,
+  orderValue: PropTypes.string.isRequired,
+  handleSearchTerm: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+};

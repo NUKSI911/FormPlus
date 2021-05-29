@@ -1,10 +1,11 @@
 import React, { useState, useEffect,useCallback } from "react";
-import { Switch, Route } from "react-router";
+import { Switch, Route } from "react-router-dom";
 import Layout from "./Layout/layout";
 import { useDispatch, useSelector } from "react-redux";
 import routes from "./config/routes";
-import { insertTemplateData } from "./pages/Template/Store/template.action";
+import { insertTemplateData } from "./pages/Home/Store/home.action";
 import ApiEndPoints from "./config/endPoints";
+import { categoryOptions,defaultOptions }  from "./config/Config";
 import useFetch from "./hooks/useFetch";
 import "./App.css";
 import NotFound from "./pages/NotFound/NotFound";
@@ -25,9 +26,9 @@ function App() {
 
   useEffect(() => {
     fetchData()
-    setCategoryValue("All");
-    setDateValue("Default");
-    setOrderValue("Default");
+    setCategoryValue(categoryOptions[0]);
+    setDateValue(defaultOptions[0]);
+    setOrderValue(defaultOptions[0]);
   }, []);
 
   useEffect(() => {
@@ -74,16 +75,18 @@ function App() {
 
 
   const filterByCategory = () => {
+    let defaultCategoryOption = categoryOptions[0] 
+    let defaultoption = defaultOptions[0]
     let tempData = templates;
-    setDateValue("Default");
+    setDateValue( defaultoption);
     setSearchTerm("");
-    setOrderValue("Default")
-    if (categoryValue !== "All") {
+    setOrderValue( defaultoption )
+    if (categoryValue !== defaultCategoryOption ) {
       const filteredTemplate = tempData.filter((template) => {
         return template.category.includes(categoryValue)
       });
       setResolvedData(filteredTemplate);
-    } else if (categoryValue === "All") {
+    } else if (categoryValue === defaultCategoryOption ) {
       setResolvedData(templates);
     } else {
       setResolvedData(tempData);

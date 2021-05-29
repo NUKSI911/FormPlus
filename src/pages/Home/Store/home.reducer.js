@@ -1,4 +1,4 @@
-import * as actionTypes from "./template.action";
+import * as actionTypes from "./home.action";
 
 const initialState = {
   templateData: [],

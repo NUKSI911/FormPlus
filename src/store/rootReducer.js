@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import templateReducer from "../pages/Template/Store/template.reducer";
+import templateReducer from "../pages/Home/Store/home.reducer";
 
 const appReducer = combineReducers({
-  template: templateReducer,
+  template: templateReducer ,
 });
 
 function rootReducer(state = {}, action) {

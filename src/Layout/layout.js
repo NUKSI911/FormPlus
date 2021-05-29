@@ -2,11 +2,13 @@ import React from "react";
 
 import classes from "./layout.module.css";
 import PropTypes from 'prop-types'
+import {  withRouter } from 'react-router-dom'
 
-function Layout({ children }) {
+function layout({ children }) {
   return <div className={classes.wrapper}>{children}</div>;
 }
 
+let Layout = withRouter(layout)
 export default Layout;
 
 Layout.propTypes = {

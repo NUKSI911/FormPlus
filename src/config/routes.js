@@ -1,10 +1,10 @@
-import Template from "../pages/Template/Template";
+import Home from "../pages/Home/Home";
 
 const routes = [
   {
     path: "/",
     exact: true,
-    component: Template,
+    component: Home,
   }
 ];
 export default routes;
