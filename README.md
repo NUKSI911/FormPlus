@@ -7,7 +7,7 @@
 ![React](https://img.shields.io/badge/-React-fff?&logo=React)
 ![Redux](https://img.shields.io/badge/-Redux-fff?&logo=Redux&logoColor=764abc)
 
-A Template Page built with React and Redux . Improving day by day.
+A Template Page built with React and Redux . 
 
 [Here](https://formplus-task.netlify.app/) is the link to the Live Demo
 
