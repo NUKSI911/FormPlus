@@ -10,7 +10,7 @@ function CardList({ data }) {
   return (
     <div className={classes.cardListWrapper}>
       {data?.resolvedState === "empty" ? (
-        <div> No Search Result Found </div>
+        <div className={classes.emptyBox}> No Search Result Found </div>
       ) : data?.length > 0 && Array.isArray(data) ? (
         data?.map((template, i) => <Card data={template} key={i} />)
       ) : (

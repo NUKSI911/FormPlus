@@ -3,6 +3,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 70px;
+  position: relative;
+}
+
+.emptyBox {
+  margin:3rem 0;
+  width: 100%;
+  position: absolute;
+  text-align: center;
 }
 
 @media screen and (max-width: 1060px) {
