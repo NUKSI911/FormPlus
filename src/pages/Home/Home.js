@@ -90,12 +90,8 @@ function Home({
 
         <div className={classes.dropdownsWrapper}>
           <span
-            style={{
-              fontSize: "14px",
-              lineHeight: "16px",
-              color: "#989898",
-              marginRight: "20px",
-            }}>
+          className = {classes.sortLabel}
+            >
             Sort By:
           </span>
           <div className={classes.dropdown}>
@@ -130,7 +126,7 @@ function Home({
       <div className={classes.feedBoxWrapper}>
         <FeedBox>
           <>
-            <img src={exclamationIcon} alt='' style={{ padding: "0 10px" }} />
+            <img src={exclamationIcon} alt='' style={{ padding: "0 10px" }} width={50} />
             <p className={classes.advertContainer}>{advertMsg}</p>
           </>
         </FeedBox>

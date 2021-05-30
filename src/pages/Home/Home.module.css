@@ -126,8 +126,9 @@
   margin: 0 10px;
 }
 
-.sortlabel {
+.sortLabel {
   display: inline-block;
+  margin-right: 20px;
   font-size: 14px;
   line-height: 16px;
   color: #989898;
@@ -175,6 +176,12 @@
   .searchContainer {
     width: 100%;
   }
+
+  .sortLabel {
+    align-self:flex-start;
+    padding:10px;
+  }
+
   .dropdown {
     flex: 1 0 100%;
     align-self: stretch;
