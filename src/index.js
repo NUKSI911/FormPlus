@@ -32,8 +32,8 @@ ReactDOM.render(
         <App />
         {/* </Router> */}
         {/* </BrowserRouter> */}
-        </PersistGate>
     </Router>
+        </PersistGate>
       </Provider>
   </React.StrictMode>,
   document.getElementById("root")
