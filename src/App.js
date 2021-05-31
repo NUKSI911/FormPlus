@@ -1,5 +1,7 @@
 import React, { useState, useEffect,useCallback } from "react";
 import { Switch, Route } from "react-router-dom";
+import ReactGA from 'react-ga';
+
 import Layout from "./Layout/layout";
 import { useDispatch, useSelector } from "react-redux";
 import routes from "./config/routes";
@@ -25,6 +27,7 @@ function App() {
   const [resolvedData, setResolvedData] = useState([]);
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname)
     fetchData()
     setCategoryValue(categoryOptions[0]);
     setDateValue(defaultOptions[0]);
