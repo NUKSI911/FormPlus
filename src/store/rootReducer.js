@@ -5,7 +5,7 @@ const appReducer = combineReducers({
   template: templateReducer ,
 });
 
-function rootReducer(state = {}, action) {
+function rootReducer(state = {template:[]}, action) {
   if (action.type === "RESET") {
     state = {
       ...state,
