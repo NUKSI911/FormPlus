@@ -123,6 +123,7 @@ function Home({
           </div>
         </div>
       </div>
+      {errorMsg && <FeedBox>{errorMsg}</FeedBox>}
       <div className={classes.feedBoxWrapper}>
         <FeedBox>
           <>
