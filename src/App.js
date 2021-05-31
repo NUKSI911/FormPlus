@@ -12,12 +12,14 @@ import useFetch from "./hooks/useFetch";
 import "./App.css";
 import NotFound from "./pages/NotFound/NotFound";
 
+
+
 function App() {
   const {  fetchData,data, errorMsg } = useFetch({
     url: ApiEndPoints.GET_TEMPLATE,
   });
   const dispatch = useDispatch();
-
+  
   const [categoryValue, setCategoryValue] = useState("");
   const [orderValue, setOrderValue] = useState("");
   const [dateValue, setDateValue] = useState("");
@@ -27,6 +29,8 @@ function App() {
   const [resolvedData, setResolvedData] = useState([]);
 
   useEffect(() => {
+    
+    ReactGA.initialize(process.env.REACT_APP_GA)
     ReactGA.pageview(window.location.pathname)
     fetchData()
     setCategoryValue(categoryOptions[0]);
