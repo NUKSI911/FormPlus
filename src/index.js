@@ -13,8 +13,9 @@ import { createBrowserHistory } from 'history';
 let store = storeConfig();
 
 const history = createBrowserHistory();
-ReactGA.initialize(process.env.REACT_APP_GA)
 
+ReactGA.initialize(process.env.REACT_APP_GA)
+console.log(process.env.REACT_APP_GA)
 
 history.listen(location => {
   ReactGA.set({ page: location.pathname }); // Update the user's current page
