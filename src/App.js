@@ -29,7 +29,7 @@ function App() {
   const [resolvedData, setResolvedData] = useState([]);
 
   useEffect(() => {
-    
+    templates?.length > 0 &&  setResolvedData(templates);
     ReactGA.initialize(process.env.REACT_APP_GA)
     ReactGA.pageview(window.location.pathname)
     fetchData()
@@ -37,14 +37,15 @@ function App() {
     setDateValue(defaultOptions[0]);
     setOrderValue(defaultOptions[0]);
   }, []);
+  
+  useEffect(() => {
+    setResolvedData(templates);
+  },[templates])
 
   useEffect(() => {
     dispatch(insertTemplateData(data));
-
-    setResolvedData(data);
+    setResolvedData(data)
   }, [data]);
-
-
   
 
   const handleSearchTerm = (e) => {
