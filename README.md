@@ -73,6 +73,8 @@ CORS - Solved By Utilising CORS-Anywhere
 
 **Nurudeen Ahmad Yekeen** [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
 
+[![Visits Badge](https://badges.pufler.dev/visits/NUksi911/FormPlus)](https://badges.pufler.dev)
+
 ## 🔖 LICENCE
 
 This project is licensed under the [MIT 2.0 License](LICENSE) which allows very broad use for both academic and commercial purposes.
