@@ -4,13 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { storeConfig } from "./config/StoreConfig";
+import { configureStore } from "./config/StoreConfig";
 // import { Router } from "react-router";
 import { Router } from "react-router-dom";
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history';
+import { PersistGate } from 'redux-persist/integration/react'
 
-let store = storeConfig();
+
+let { persistor,store } = configureStore();
 
 const history = createBrowserHistory();
 
@@ -22,16 +24,17 @@ history.listen(location => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router history={history} >
       <Provider store={store}>
-        {/* <BrowserRouter> */}
-        {/* <Router> */}
+    <Router history={history} >
+      <PersistGate  loading={null} persistor={persistor}>
+
 
         <App />
         {/* </Router> */}
         {/* </BrowserRouter> */}
-      </Provider>
+        </PersistGate>
     </Router>
+      </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
