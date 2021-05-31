@@ -5,13 +5,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { storeConfig } from "./config/StoreConfig";
-import { Router } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+// import { Router } from "react-router";
+import { Router } from "react-router-dom";
+import ReactGA from 'react-ga'
+import { createBrowserHistory } from 'history';
+
 let store = storeConfig();
+
+const history = createBrowserHistory();
+ReactGA.initialize(process.env.REACT_APP_GA)
+
+
+history.listen(location => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router history={history} >
       <Provider store={store}>
         {/* <BrowserRouter> */}
         {/* <Router> */}
@@ -20,7 +32,7 @@ ReactDOM.render(
         {/* </Router> */}
         {/* </BrowserRouter> */}
       </Provider>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
