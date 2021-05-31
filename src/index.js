@@ -25,8 +25,8 @@ history.listen(location => {
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
-    <Router history={history} >
       <PersistGate  loading={null} persistor={persistor}>
+    <Router history={history} >
 
 
         <App />
