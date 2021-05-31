@@ -73,7 +73,7 @@ CORS - Solved By Utilising CORS-Anywhere
 
 **Nurudeen Ahmad Yekeen** [![Twitter Follow](https://img.shields.io/twitter/follow/nurudeenyekeen1?style=social)](https://twitter.com/nurudeenyekeen1)
 
-[![Visits Badge](https://badges.pufler.dev/visits/NUKSI911/FormPlus)](https://badges.pufler.dev)
+[![Visits Badge](https://badges.pufler.dev/visits/nn/git-badges)](https://badges.pufler.dev)
 
 ## 🔖 LICENCE
 
