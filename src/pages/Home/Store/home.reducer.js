@@ -6,15 +6,15 @@ const initialState = {
 
 function templateReducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.TemplateConfig.InsertTemplateData: {
+    case actionTypes.TemplateConfig.InsertTemplateData: 
       return {
         ...state,
         templateData: action.payload,
       };
-    }
-    default: {
+    
+    default: 
       return state;
-    }
+    
   }
 }
 

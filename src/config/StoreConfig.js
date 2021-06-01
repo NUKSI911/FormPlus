@@ -8,7 +8,7 @@ import storage from "redux-persist/lib/storage";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 
 const persistConfig = {
-  key: "root",
+  key: "primary",
   storage,
   whitelist:['template'],
   stateReconciler:autoMergeLevel2
@@ -19,7 +19,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export function configureStore() {
   let store = createStore(
-    persistedReducer,
+    persistedReducer,{},
     composeWithDevTools(applyMiddleware(thunk))
   );
 
