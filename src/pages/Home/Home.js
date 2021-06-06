@@ -59,8 +59,10 @@ function Home({
 
   useEffect(() => {
     setResultSummary(
-      `${templates.length || 0} Templates ${
-        categoryValue !== categoryOptions[0] || searchTerm !== "" ? "Found" : ""
+      `${
+        categoryValue !== categoryOptions[0] || searchTerm !== ''
+          ? `${templates.length || 0 } Templates Found`
+          : `${templates.length || 0 } templates`
       }`
     );
   }, [templates, searchTerm, categoryValue]);
