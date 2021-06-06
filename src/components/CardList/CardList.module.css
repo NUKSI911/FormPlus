@@ -4,6 +4,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 70px;
   position: relative;
+  padding:12px;
 }
 
 .emptyBox {
@@ -24,5 +25,6 @@
   .cardListWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(15, 1fr);
+    padding: 5px;
   }
 }
