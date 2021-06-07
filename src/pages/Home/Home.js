@@ -147,7 +147,7 @@ function Home({
           )}
         </span>
       </div>
-      <div style={{height:'50vh',overflow:"scroll"}}>
+      <div >
         <CardList data={data} />
       </div>
 
